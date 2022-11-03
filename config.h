@@ -62,7 +62,7 @@ static const char *slockcmd[] = { "slock", NULL };
 
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
-		{ MODKEY|ShiftMask,     10,      spawn,          {.v = slockcmd } },
+		/* { MODKEY|ShiftMask,     10,      spawn,          {.v = slockcmd } }, */
 		{ MODKEY,               33,    spawn,          {.v = dmenucmd } }, // p
 		{ MODKEY|ShiftMask,     36,    spawn,          {.v = termcmd } }, // Return
 		{ MODKEY,               56,    togglebar,      {0} },             // b
