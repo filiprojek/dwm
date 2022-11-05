@@ -60,12 +60,24 @@ static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont,
 static const char *termcmd[]  = { "kitty", NULL };
 static const char *slockcmd[] = { "slock", NULL };
 static const char *brightness[2][3] = {{"backlight_control", "+5", NULL}, {"backlight_control", "-5", NULL}};
+// Volume Commands
+static const char *volume[3][4] = { {
+    "amixer", "set", "Master", "10%+"
+  },{
+    "amixer", "set", "Master", "10%-"
+  },{
+    "amixer", "set", "Master", "toggle"
+  } 
+};
 
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
-		/* { MODKEY|ShiftMask,     10,      spawn,          {.v = slockcmd } }, */
-		{ 0,			233,   spawn,	       {.v = brightness[0]}},
-		{ 0,			232,   spawn,	       {.v = brightness[1]}},
+		{ MODKEY|ShiftMask,	46,    spawn,          {.v = slockcmd } },
+		{ 0,			233,   spawn,	       {.v = brightness[0]} },
+		{ 0,			232,   spawn,	       {.v = brightness[1]} },
+		{ 0,			123,   spawn,	       {.v = volume[0]} },
+  		{ 0,			122,   spawn,          {.v = volume[1]} },
+  		{ 0,  			121,   spawn,          {.v = volume[2]} },
 		{ MODKEY,               33,    spawn,          {.v = dmenucmd } }, // p
 		{ MODKEY|ShiftMask,     36,    spawn,          {.v = termcmd } }, // Return
 		{ MODKEY,               56,    togglebar,      {0} },             // b
