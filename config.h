@@ -111,6 +111,7 @@ static const Key keys[] = {
 		TAGKEYS(                17,                    7)                 // 8
 		TAGKEYS(                18,                    8)                 // 9
 		{ MODKEY|ShiftMask,     24,    quit,           {0} },             // q
+        { 0, 107, spawn, SHCMD("shotgun $(slop -f '-i %i -g %g') - | tee /home/$USER/Pictures/Screenshots/$(date +'%F_%T').png | xclip -t 'image/png' -selection c") },
 };
 
 /* button definitions */
